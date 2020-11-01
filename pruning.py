@@ -9,7 +9,7 @@ import torch.optim as optim
 from torchvision import datasets, transforms
 from tqdm import tqdm
 
-from net.models import LeNet
+from net.models import *
 from net.quantization import apply_weight_sharing
 import util
 
@@ -67,7 +67,7 @@ test_loader = torch.utils.data.DataLoader(
 
 
 # Define which model to use
-model = LeNet(mask=True).to(device)
+model = LeNet_5(mask=True).to(device)
 
 print(model)
 util.print_model_parameters(model)
